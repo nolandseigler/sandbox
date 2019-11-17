@@ -1,0 +1,6 @@
+.idea/*
+*.iml
+.DS_STORE
+auth.json
+config.json
+node_modules
