@@ -18,15 +18,19 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
-    // client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/  +/);
+    const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-// the rest of your code
-//         command to kick users moved to its own file. created other commands based on the guide.
 
-   }
-})
+    if (command === 'clear') {
+        client.commands.get('clear').execute(message, args);
+    } else if (command === 'kick-user') {
+        client.commands.get('kick-user').execute(message, args);
+    } else if (command === 'ping') {
+        client.commands.get('ping').execute(message, args);
+    }
+    // do the same for the rest of the commands...
+});
 
 client.login(token);
