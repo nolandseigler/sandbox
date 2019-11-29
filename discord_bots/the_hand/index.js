@@ -22,15 +22,14 @@ client.on('message', message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+    if (!client.commands.has(command)) return;
 
-    if (command === 'clear') {
-        client.commands.get('clear').execute(message, args);
-    } else if (command === 'kick-user') {
-        client.commands.get('kick-user').execute(message, args);
-    } else if (command === 'ping') {
-        client.commands.get('ping').execute(message, args);
+    try {
+        client.commands.get(command).execute(message, args);
+    } catch (error) {
+        console.error(error);
+        message.reply('there was an error trying to execute that command!');
     }
-    // do the same for the rest of the commands...
 });
 
 client.login(token);
