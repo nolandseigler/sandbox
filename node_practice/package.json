@@ -1,0 +1,19 @@
+{
+  "name": "node_practice",
+  "version": "1.0.0",
+  "description": "A PLACE TO LEARN NODE.JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "start": "node index.js",
+    "your-custom-script": "echo npm"
+  },
+  "author": "Noland Seigler",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  }
+}
