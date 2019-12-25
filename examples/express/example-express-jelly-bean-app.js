@@ -80,6 +80,13 @@ app.delete('/beans/:beanName', (req, res, next) => {
     jellybeanBag[beanName] = null;
     res.status(204).send();
 });
+//handles errors. if no set error status assigns a 500
+app.use((err, req, res, next) => {
+    if (!err.status) {
+        err.status = 500;
+    }
+    res.status(err.status).send(err.message);
+});
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
