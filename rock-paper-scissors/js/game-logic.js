@@ -51,7 +51,7 @@ const rockPaperScissors = (input1, input2) => {
     };
     return results;
 };
-console.log(rockPaperScissors("rock", "scissors"));
+// console.log(rockPaperScissors("rock", "scissors"));
 //function that sets the values of the player move vars
 const setPlayerMoves = (player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue) => {
     if (typeof player === "string" && player.length > 0) {
@@ -81,7 +81,25 @@ else {
 };
 const getRoundWinner = (roundNumber, playerOneMoveType, playerOneMoveValue, playerTwoMoveType, playerTwoMoveValue) => {
     if (typeof roundNumber === "number" && typeof playerOneMoveType === "string" && typeof playerOneMoveValue === "string" && typeof playerTwoMoveType === "string" && typeof playerTwoMoveValue === "string") {
-        if (roundNumber === 1)
+        let roundOneWinner;
+        let roundTwoWinner;
+        let roundThreeWinner;
+        let overallWinner;
+        if (roundNumber === 1) {
+            const resultObj = rockPaperScissors(playerOneMoveType, playerTwoMoveType);
+            if (resultObj.playerOne === "tie") {
+                if (playerOneMoveValue === playerTwoMoveValue) {
+                    roundOneWinner = "It's a Tie!";
+                }
+                else if (playerOneMoveValue > playerTwoMoveValue) {
+                    roundOneWinner = "Player One Wins. Player Two Loses.";
+                } else if (playerOneMoveValue < playerTwoMoveVlaue) {
+                    roundOneWinner = "Player One Loses. Player Two Wins."
+                } else {
+                    return console.log("Error in the value conditionals.");
+                }
+            } else if (resultObj.playerOne) {}
+        }
 
     }
 }
