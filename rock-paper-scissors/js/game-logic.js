@@ -79,27 +79,39 @@ else {
         return console.log("An error has occurred. Select the correct player.")
     };
 };
-const getRoundWinner = (roundNumber, playerOneMoveType, playerOneMoveValue, playerTwoMoveType, playerTwoMoveValue) => {
-    if (typeof roundNumber === "number" && typeof playerOneMoveType === "string" && typeof playerOneMoveValue === "string" && typeof playerTwoMoveType === "string" && typeof playerTwoMoveValue === "string") {
-        let roundOneWinner;
-        let roundTwoWinner;
-        let roundThreeWinner;
-        let overallWinner;
-        if (roundNumber === 1) {
+const getRoundWinner = (roundNumber) => {
+    if (typeof roundNumber === "number") {
+        const decide = (playerOneMoveType, playerTwoMoveType) => {
             const resultObj = rockPaperScissors(playerOneMoveType, playerTwoMoveType);
             if (resultObj.playerOne === "tie") {
                 if (playerOneMoveValue === playerTwoMoveValue) {
-                    roundOneWinner = "It's a Tie!";
-                }
-                else if (playerOneMoveValue > playerTwoMoveValue) {
-                    roundOneWinner = "Player One Wins. Player Two Loses.";
+                    roundWinner = "Tie";
+                } else if (playerOneMoveValue > playerTwoMoveValue) {
+                    roundWinner = "Player One";
                 } else if (playerOneMoveValue < playerTwoMoveVlaue) {
-                    roundOneWinner = "Player One Loses. Player Two Wins."
+                    roundWinner = "Player Two"
                 } else {
                     return console.log("Error in the value conditionals.");
                 }
-            } else if (resultObj.playerOne) {}
-        }
+            } else if (resultObj.playerOne === "win") {
+                roundWinner = "Player One";
+            } else if (resultObj.playerOne === "loss") {
+                roundWinner = "Player Two";
+            } else {
+                return console.log("Error in the main conditional.");
+            };
+            return roundWinner
+        };
+        const playRound = (roundNumber) => {
+            if (roundNumber === "1") {
+               decide()
+            } else if (roundNumber === "2") {
 
+            } else if (roundNumber === "3") {
+
+            } else {
+                return console.log("Error in the main conditional.");
+            };
+        }
     }
 }
