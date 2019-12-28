@@ -128,7 +128,7 @@ const getGameWinner = () => {
     let playerTwo = 0;
     let tie = 0;
     results.forEach(result => {
-        result === "Player One" ? playerOne++ : result === "Player Two" ? playerTwo++ : result === "Tie" ? tie++ : console.log("Error in getGameWinner");
+        result === "Player One" ? playerOne = playerOne + 1 : result === "Player Two" ? playerTwo = playerTwo + 1 : result === "Tie" ? tie = tie + 1 : console.log("Error in getGameWinner");
     });
     let winner = playerOne > playerTwo ? "Player One Wins Match" : playerOne < playerTwo ? "Player Two Wins Match" : "Match is a Tie";
     console.log(winner);
