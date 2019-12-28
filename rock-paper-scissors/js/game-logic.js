@@ -120,7 +120,7 @@ const getRoundWinner = (roundNumber) => {
     } else {
         return console.log("Error in the main conditional.");
     };
-}
+};
 const getGameWinner = () => {
     let roundOne = getRoundWinner(1);
     let roundTwo = getRoundWinner(2);
@@ -134,4 +134,4 @@ const getGameWinner = () => {
     });
     let winner = playerOne > playerTwo ? "Player One Wins Match" : playerOne < playerTwo ? "Player Two Wins Match" : "Match is a Tie";
     return winner;
-}
+};
