@@ -7,7 +7,7 @@ let playerOneMoveTwoType;
 let playerOneMoveTwoValue;
 let playerOneMoveThreeType;
 let playerOneMoveThreeValue;
-let isPlayerOneReady = false;
+
 //player two move types and values
 let playerTwoMoveOneType;
 let playerTwoMoveOneValue;
@@ -15,7 +15,6 @@ let playerTwoMoveTwoType;
 let playerTwoMoveTwoValue;
 let playerTwoMoveThreeType;
 let playerTwoMoveThreeValue;
-let isPlayerTwoReady = false;
 
 //rock-paper-scissors
 const rockPaperScissors = (input1, input2) => {
@@ -58,22 +57,20 @@ const rockPaperScissors = (input1, input2) => {
 //function that sets the values of the player move vars
 const setPlayerMoves = (player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue) => {
     if (typeof player === "string" && player.length > 0) {
-        if (player.toLowerCase() === "player one" && !isPlayerOneReady) {
+        if (player.toLowerCase() === "player one") {
             playerOneMoveOneType = moveOneType;
             playerOneMoveOneValue = moveOneValue;
             playerOneMoveTwoType = moveTwoType;
             playerOneMoveTwoValue = moveTwoValue;
             playerOneMoveThreeType = moveThreeType;
             playerOneMoveThreeValue = moveThreeValue;
-            isPlayerOneReady = true;
-        } else if (player.toLowerCase() === "player two" && !isPlayerTwoReady) {
+        } else if (player.toLowerCase() === "player two") {
             playerTwoMoveOneType = moveOneType;
             playerTwoMoveOneValue = moveOneValue;
             playerTwoMoveTwoType = moveTwoType;
             playerTwoMoveTwoValue = moveTwoValue;
             playerTwoMoveThreeType = moveThreeType;
             playerTwoMoveThreeValue = moveThreeValue;
-            isPlayerTwoReady = true;
         } else {
             return console.log("An error has occurred. Select the correct player.")
         };
@@ -106,11 +103,11 @@ const getRoundWinner = (roundNumber) => {
             return roundWinner
         };
         const playRound = (roundNumber) => {
-            if (roundNumber === "1") {
+            if (roundNumber === 1) {
                 return decide(playerOneMoveOneType, playerOneMoveOneValue, playerTwoMoveOneType, playerTwoMoveOneValue);
-            } else if (roundNumber === "2") {
+            } else if (roundNumber === 2) {
                 return decide(playerOneMoveTwoType, playerOneMoveTwoValue, playerTwoMoveTwoType, playerTwoMoveTwoValue);
-            } else if (roundNumber === "3") {
+            } else if (roundNumber === 3) {
                  return decide(playerOneMoveThreeType, playerOneMoveThreeValue, playerTwoMoveThreeType, playerTwoMoveThreeValue);
             } else {
                 return console.log("Error in the playRound conditional.");
@@ -122,6 +119,7 @@ const getRoundWinner = (roundNumber) => {
     };
 };
 const getGameWinner = () => {
+    console.log("Start of get game winner");
     let roundOne = getRoundWinner(1);
     let roundTwo = getRoundWinner(2);
     let roundThree = getRoundWinner(3);
@@ -133,5 +131,6 @@ const getGameWinner = () => {
         result === "Player One" ? playerOne++ : result === "Player Two" ? playerTwo++ : result === "Tie" ? tie++ : console.log("Error in getGameWinner");
     });
     let winner = playerOne > playerTwo ? "Player One Wins Match" : playerOne < playerTwo ? "Player Two Wins Match" : "Match is a Tie";
+    console.log(winner);
     return winner;
 };
