@@ -118,7 +118,7 @@ const getRoundWinner = (roundNumber) => {
         return console.log("Error in the main conditional.");
     };
 };
-// const winnerId = document.getElementById("winner-text")
+
 const getGameWinner = () => {
     console.log("Start of get game winner");
     let roundOne = getRoundWinner(1);
@@ -131,8 +131,8 @@ const getGameWinner = () => {
     results.forEach(result => {
         result === "Player One" ? playerOne = playerOne + 1 : result === "Player Two" ? playerTwo = playerTwo + 1 : result === "Tie" ? tie = tie + 1 : console.log("Error in getGameWinner");
     });
-    let winner = playerOne > playerTwo ? "Player One Wins Match" : playerOne < playerTwo ? "Player Two Wins Match" : "Match is a Tie";
+    let winner = playerOne > playerTwo ? "Player One" : playerOne < playerTwo ? "Player Two" : "Tie";
     console.log(winner);
     return winner;
 };
-// winnerId.innerHTML = getGameWinner();
+
