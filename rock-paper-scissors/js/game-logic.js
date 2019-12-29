@@ -118,6 +118,7 @@ const getRoundWinner = (roundNumber) => {
         return console.log("Error in the main conditional.");
     };
 };
+// const winnerId = document.getElementById("winner-text")
 const getGameWinner = () => {
     console.log("Start of get game winner");
     let roundOne = getRoundWinner(1);
@@ -134,3 +135,4 @@ const getGameWinner = () => {
     console.log(winner);
     return winner;
 };
+// winnerId.innerHTML = getGameWinner();

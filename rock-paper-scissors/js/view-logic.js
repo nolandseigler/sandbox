@@ -109,6 +109,7 @@ function playGame(roundNumber) {
       playGame(roundNumber + 1);
     } else {
       const gameWinnerText = getWinnerText(getGameWinner());
+      //below this may be the issue
       $('#winner h2').text(gameWinnerText);
       $('#winner').css("display", "flex").hide().fadeIn(
           VIEW_TRANSITION_TIME, () => $WIN_SOUND.play());
