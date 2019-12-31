@@ -17,8 +17,8 @@ const toggleDrum = (arrName, indexNum) => {
 const clear = (arrName) => {
      arrName.fill(false, 0, arrName.length - 1);
 };
-toggleDrum(kicks, 1);
-console.log(kicks);
-console.log(snares);
-clear(kicks);
-console.log(kicks);
+// toggleDrum(kicks, 1);
+// console.log(kicks);
+// console.log(snares);
+// clear(kicks);
+// console.log(kicks);
