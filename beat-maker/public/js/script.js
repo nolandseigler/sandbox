@@ -5,6 +5,9 @@ let hiHats = [false, false, false, false, false, false, false, false, false, fal
 let rideCymbals = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
 
 const toggleDrum = (arrName, indexNum) => {
+    if (arrName === undefined || arrName === '' || indexNum === undefined || indexNum === '') {
+        return console.log("Invalid args");
+    }
     if (arrName[indexNum] === false) {
         arrName[indexNum] = true;
     } else if (arrName[indexNum] === true) {
@@ -15,7 +18,12 @@ const toggleDrum = (arrName, indexNum) => {
 };
 
 const clear = (arrName) => {
-     arrName.fill(false, 0, arrName.length - 1);
+    if (arrName === undefined || arrName === '') {
+        return console.log("Invalid args");
+    }
+    if (arrName === kicks || arrName === snares || arrName === hiHats || arrName === rideCymbals) {
+        arrName.fill(false, 0, arrName.length - 1);
+    }
 };
 // toggleDrum(kicks, 1);
 // console.log(kicks);
@@ -33,5 +41,3 @@ const invert = (arrName) => {
         counter++
     });
 };
-invert(kicks);
-console.log(kicks);
