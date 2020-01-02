@@ -22,3 +22,16 @@ const clear = (arrName) => {
 // console.log(snares);
 // clear(kicks);
 // console.log(kicks);
+const invert = (arrName) => {
+    let counter = 0;
+    arrName.forEach(element => {
+        if (element === true) {
+            arrName[counter] = false;
+        } else {
+            arrName[counter] = true;
+        };
+        counter++
+    });
+};
+invert(kicks);
+console.log(kicks);
