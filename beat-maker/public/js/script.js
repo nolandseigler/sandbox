@@ -1,43 +1,50 @@
+
+//create an array of drums initialized with all false values.
+const createEmptyDrumArray = () => new Array(16).fill(false);
+
+//call the function to create drum arrays
 // Drum Arrays
-let kicks = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-let snares = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-let hiHats = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-let rideCymbals = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-
-const toggleDrum = (arrName, indexNum) => {
-    if (arrName === undefined || arrName === '' || indexNum === undefined || indexNum === '') {
-        return console.log("Invalid args");
+let kicks = createEmptyDrumArray();
+let snares = createEmptyDrumArray();
+let hiHats = createEmptyDrumArray();
+let rideCymbals = createEmptyDrumArray();
+//call string name of the proper array returns current array
+const getDrumArrayByName = (name) => {
+    switch (name) {
+        case 'kicks':
+            return kicks;
+        case 'snares':
+            return snares;
+        case 'hiHats':
+            return hiHats;
+        case 'rideCymbals':
+            return rideCymbals;
+        default:
+            return;
     }
-    if (arrName[indexNum] === false) {
-        arrName[indexNum] = true;
-    } else if (arrName[indexNum] === true) {
-        arrName[indexNum] = false;
-    } else {
-        return console.log("Error in the toggleDrum function");
+};
+//toggles drums ensuring that the index doesnt exceed bounds
+const toggleDrum = (drumArrayName, index) => {
+    const drums = getDrumArrayByName(drumArrayName);
+    if (!drums || index > 15 || index < 0) {
+        return;
+    }
+    drums[index] = !drums[index];
+};
+//reset all drums back to original value of false
+const clear = (drumArrayName) => {
+    const drums = getDrumArrayByName(drumArrayName);
+    if (drums) {
+        drums.fill(false);
     }
 };
 
-const clear = (arrName) => {
-    if (arrName === undefined || arrName === '') {
-        return console.log("Invalid args");
+const invert = (drumArrayName) => {
+    const drums = getDrumArrayByName(drumArrayName);
+    if (!drums) {
+        return;
     }
-    if (arrName === kicks || arrName === snares || arrName === hiHats || arrName === rideCymbals) {
-        arrName.fill(false, 0, arrName.length - 1);
-    }
-};
-// toggleDrum(kicks, 1);
-// console.log(kicks);
-// console.log(snares);
-// clear(kicks);
-// console.log(kicks);
-const invert = (arrName) => {
-    let counter = 0;
-    arrName.forEach(element => {
-        if (element === true) {
-            arrName[counter] = false;
-        } else {
-            arrName[counter] = true;
-        };
-        counter++
+    drums.forEach(element => {
+        drums[i] = !drums[i];
     });
 };
