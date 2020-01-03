@@ -40,11 +40,13 @@ const clear = (drumArrayName) => {
 };
 
 const invert = (drumArrayName) => {
+    let i = 0;
     const drums = getDrumArrayByName(drumArrayName);
     if (!drums) {
         return;
     }
     drums.forEach(element => {
         drums[i] = !drums[i];
+        i++;
     });
 };
