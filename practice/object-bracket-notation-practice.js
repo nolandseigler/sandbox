@@ -73,3 +73,18 @@ const robot = {
     }
 };
 console.log(robot.provideInfo());
+//use a getter method when 'getting' data that should be immutable (notice the _) ref the _ seems to work best with . notation
+const robot = {
+    _model: '1E78V2',
+    _energyLevel: 100,
+    get energyLevel() {
+        if (typeof this._energyLevel === 'number') {
+            return `My current energy level is ${this._energyLevel}`
+        } else {
+            return `System malfunction: cannot retrieve energy level`
+        };
+    }
+};
+
+console.log(robot.energyLevel);
+
