@@ -120,9 +120,30 @@ const robotFactory = (modelParam, mobileParam) => {
         beep() {
             console.log('Beep Boop');
         }
-    }
+    };
     return obj
 };
 const tinCan = robotFactory('P-500', true);
 
 tinCan.beep();
+
+// destructuring. property value shorthand
+const monsterFactory = (name, age) => {
+    return {
+        name,
+        age
+    };
+};
+function robotFactory(model, mobile){
+    return {
+        model,
+        mobile,
+        beep() {
+            console.log('Beep Boop');
+        }
+    };
+};
+
+const newRobot = robotFactory('P-501', false)
+console.log(newRobot.model)
+console.log(newRobot.mobile)
