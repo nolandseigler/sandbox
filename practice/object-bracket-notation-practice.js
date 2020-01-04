@@ -62,3 +62,14 @@ const remotelyDisable = objParam => {
 greenEnergy(spaceship);
 remotelyDisable(spaceship);
 console.log(spaceship);
+
+//avoid using arrow functions when using this in a method!
+//use this when using a method that references variables within the obj
+const robot = {
+    model: '1E78V2',
+    energyLevel: 100,
+    provideInfo() {
+        return `I am ${this.model} and my current energy level is ${this.energyLevel}`;
+    }
+};
+console.log(robot.provideInfo());
