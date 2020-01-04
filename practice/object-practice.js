@@ -110,3 +110,19 @@ const robot = {
 
 robot.numOfSensors = 100;
 console.log(robot.numOfSensors);
+
+//FACTOR FUNCTIONS!!!!
+
+const robotFactory = (modelParam, mobileParam) => {
+    let obj = {
+        model: modelParam,
+        mobile: mobileParam,
+        beep() {
+            console.log('Beep Boop');
+        }
+    }
+    return obj
+};
+const tinCan = robotFactory('P-500', true);
+
+tinCan.beep();
