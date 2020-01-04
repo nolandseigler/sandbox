@@ -144,6 +144,44 @@ function robotFactory(model, mobile){
     };
 };
 
-const newRobot = robotFactory('P-501', false)
-console.log(newRobot.model)
-console.log(newRobot.mobile)
+const newRobot = robotFactory('P-501', false);
+console.log(newRobot.model);
+console.log(newRobot.mobile);
+
+//destructed assignment. create a variable with the name of an object's key that is wrapped in curly braces and assign it to obj.
+const weapons = {
+    rifle: 'blaster',
+    melee: 'sword',
+    bazooka: 'bazooka',
+    special: {
+        option1: 'lightsaber',
+        option2: 'silver sword'
+    }
+};
+const bazooka = weapons.bazooka;
+console.log(bazooka); // Logs 'bazooka'
+//below is destructed assignment
+const { bazooka } = weapons;
+console.log(bazooka); // Logs 'bazooka'
+const { option1 } = weapons.special;
+console.log(option1);// Logs 'lightsaber'
+
+//continued
+
+const robot = {
+    model: '1E78V2',
+    energyLevel: 100,
+    functionality: {
+        beep() {
+            console.log('Beep Boop');
+        },
+        fireLaser() {
+            console.log('Pew Pew');
+        },
+    }
+};
+
+const { functionality } = robot;
+//shortcut instead of doing robot.functionality.beep(); this works because functionality var assign;
+functionality.beep();
+
