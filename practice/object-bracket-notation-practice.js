@@ -42,3 +42,23 @@ spaceship['passengers'] = [{diplomat: {
         }}];
 
 const firstPassenger = spaceship['passengers'][0];
+
+//more practice reassigning and adding key/value pairs
+
+let spaceship = {
+    'Fuel Type' : 'Turbo Fuel',
+    homePlanet : 'Earth'
+};
+
+// Write your code below
+const greenEnergy = objParam => {
+    objParam['Fuel Type'] = 'avocado oil';
+};
+
+const remotelyDisable = objParam => {
+    objParam['disabled'] = true;
+};
+
+greenEnergy(spaceship);
+remotelyDisable(spaceship);
+console.log(spaceship);
