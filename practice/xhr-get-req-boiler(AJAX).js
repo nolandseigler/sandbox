@@ -9,6 +9,7 @@ xhr.responseType = 'json';
 xhr.onreadystatechange = () => {
     if (xhr.readyState === XMLHttpRequest.DONE) {
         //Code executed with response
+         return xhr.response;
     }
 };
 //
