@@ -185,3 +185,29 @@ const { functionality } = robot;
 //shortcut instead of doing robot.functionality.beep(); this works because functionality var assign;
 functionality.beep();
 
+//built in obj methods (a few)
+
+const robot = {
+    model: 'SAL-1000',
+    mobile: true,
+    sentient: false,
+    armor: 'Steel-plated',
+    energyLevel: 75
+};
+
+const robotKeys = Object.keys(robot);
+
+console.log(robotKeys);
+
+const robotEntries = Object.entries(robot);
+
+console.log(robotEntries);
+
+const newRobot = Object.assign({laserBlaster: true, voiceRecognition: true}, robot);
+
+console.log(newRobot);
+
+//construct a new obj without a factory function like this
+const robot1 = Object.assign({}, newRobot);
+console.log(robot1);
+
