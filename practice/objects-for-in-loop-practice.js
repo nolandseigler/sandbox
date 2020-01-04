@@ -58,3 +58,12 @@ for (let obj in spaceship['crew']) {
 for (let obj in spaceship['crew']) {
     console.log(`${spaceship['crew'][obj]['name']}: ${spaceship['crew'][obj]['degree']}`);
 };
+//use this when using a method that references variables within the obj
+const robot = {
+    model: '1E78V2',
+    energyLevel: 100,
+    provideInfo() {
+        return `I am ${this.model} and my current energy level is ${this.energyLevel}`;
+    }
+};
+console.log(robot.provideInfo());
