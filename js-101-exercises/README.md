@@ -1,3 +1,16 @@
+#About This Directory:
+I was assigned these 101 exercise as part of my Codeup Curriculum. 
+
+To view the results of my assignment open the index.html file in your browser.
+
+My solutions are in the 101-exercises.js file.
+
+Thanks For viewing!
+
+
+#Below this line is the formal README for the 101 Exercises.
+
+-------------
 # 101 Exercises for JS
 
 ## Rationale
