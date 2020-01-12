@@ -32,3 +32,5 @@ const displaySuggestions = (event) => {
 }
 
 submit.addEventListener('click', displaySuggestions);
+
+
