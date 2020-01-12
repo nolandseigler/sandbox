@@ -1,24 +1,40 @@
-//new obj
-const xhr = new XMLHttpRequest;
+// Information to reach API
+//Needs proper import of key works if linked through html using keys.js
+const apiKey = REBRANDLY_API_KEY;
+const url = 'https://api.rebrandly.com/v1/links';
 
-const url = 'https://api-to-call.com/endpoint';
+// Some page elements
+const inputField = document.querySelector('#input');
+const shortenButton = document.querySelector('#shorten');
+const responseField = document.querySelector('#responseField');
 
-// convert to JSON string for sending across the web
-const data = JSON.stringify({id: '200'});
+// AJAX functions
+const shortenUrl = () => {
+    const urlToShorten = inputField.value
+    const data = JSON.stringify({destination: urlToShorten})
 
-//set response type to JSON
-xhr.responseType = 'json';
+    //AJAX xhr
+    const xhr = new XMLHttpRequest;
+    xhr.responseType = 'json';
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            renderResponse(xhr.response)
+        };
+    };
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.setRequestHeader('apikey', apiKey);
+    xhr.send(data);
+}
 
-//on state change and if the request has been closed(DONE) then return the response from the server
-xhr.onreadystatechange = () => {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-        return xhr.response;
+
+// Clear page and call AJAX functions
+const displayShortUrl = (event) => {
+    event.preventDefault();
+    while(responseField.firstChild){
+        responseField.removeChild(responseField.firstChild);
     }
-};
+    shortenUrl();
+}
 
-//creates a new request with method and destination as params
-xhr.open('POST', url);
-
-//sends request to server
-
-xhr.send(data);
+shortenButton.addEventListener('click', displayShortUrl);
