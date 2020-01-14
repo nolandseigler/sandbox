@@ -1,4 +1,4 @@
-// app/index.js
+// app/main.js
 const calc = require('./calc')
 
 const numbersToAdd = [
