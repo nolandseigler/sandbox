@@ -120,7 +120,7 @@ const getRoundWinner = (roundNumber) => {
 };
 
 const getGameWinner = () => {
-    console.log("Start of get game winner");
+    console.log("Start of get gameTitlePage winner");
     let roundOne = getRoundWinner(1);
     let roundTwo = getRoundWinner(2);
     let roundThree = getRoundWinner(3);

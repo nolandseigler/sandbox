@@ -61,7 +61,7 @@ function startGame(playerType) {
   playerMode = playerType;
   resetMoves(PLAYER_ONE);
 
-  $('#game-start').fadeOut(VIEW_TRANSITION_TIME, () => {
+  $('#gameTitlePage-start').fadeOut(VIEW_TRANSITION_TIME, () => {
     $('#move-selection').fadeIn(VIEW_TRANSITION_TIME);
   });
 }
@@ -200,11 +200,11 @@ $(document).ready(() => {
     $('#winner').fadeOut(VIEW_TRANSITION_TIME, startGame.bind(null, COMPUTER_PLAYER_MODE));
   });
 
-  $('#game-start .button.human').on('click', () => {
+  $('#gameTitlePage-start .button.human').on('click', () => {
     startGame(HUMAN_PLAYER_MODE);
   });
 
-  $('#game-start .button.computer').on('click', () => {
+  $('#gameTitlePage-start .button.computer').on('click', () => {
     startGame(COMPUTER_PLAYER_MODE);
   });
 

@@ -1,6 +1,6 @@
 var fs = require('fs');
 var vm = require('vm');
-var path = 'js/game-logic.js';
+var path = 'js/gameTitlePage-logic.js';
 
 var code = fs.readFileSync(path);
 vm.runInThisContext(code);
@@ -345,7 +345,7 @@ describe('getGameWinner() - Main Functionality', function() {
     should.equal(getGameWinner(), 'Player Two');
   });
 
-  it('should declare when the game is a tie', function() {
+  it('should declare when the gameTitlePage is a tie', function() {
     playerOneMoveOneType = 'rock';
     playerOneMoveOneValue = 1;
     playerTwoMoveOneType = 'rock';

@@ -18,7 +18,7 @@ After each player's moves are chosen, they will compare moves in the order they 
 However, if two types are the same, then the move with more strength will win. If both strength values are
 equal, then a tie is declared.
 
-The player that wins the majority of the three rounds will be the winner of the game.
+The player that wins the majority of the three rounds will be the winner of the gameTitlePage.
 
 To demo all of this functionality, try out a final version of this project, located <a href="https://s3.amazonaws.com/codecademy-content/programs/build-apis/projects/build-apis-project-1-rock-paper-scissors-x99/project/index.html" target="_blank">here</a>.
 
@@ -29,7 +29,7 @@ To start, download the starting code for this project <a href="https://s3.amazon
 
 ## Implementation Details
 
-All of your code should be written in the file at the following path: **js/game-logic.js**. Use the descriptions and testing suite discussed below to guide implementation of all necessary functionality.
+All of your code should be written in the file at the following path: **js/gameTitlePage-logic.js**. Use the descriptions and testing suite discussed below to guide implementation of all necessary functionality.
 
 To complete this project, your code will need to contain the following:
 
@@ -40,12 +40,12 @@ To complete this project, your code will need to contain the following:
 * A function called `getRoundWinner`, which takes a round number (`1`, `2`, or `3`), compares both player's move types and values for that round, and returns the appropriate winner (`'Player One'`, `'Player Two'`, or `'Tie'`)
 
 * A function called `getGameWinner`, which compares both player's move
-types and values for the whole game and returns the appropriate winner (`'Player One'`, `'Player Two'`, or `'Tie'`)
+types and values for the whole gameTitlePage and returns the appropriate winner (`'Player One'`, `'Player Two'`, or `'Tie'`)
 
 * Bonus: A function called `setComputerMoves`, which chooses three random moves for player two. The move type for each move should be completely random, and the move values should be random but add up to 99.
 
 
-To demo your version of the game, open **index.html** in your browser (by double clicking **index.html** in a file browser or dragging it into your Internet browser). You will be writing
+To demo your version of the gameTitlePage, open **index.html** in your browser (by double clicking **index.html** in a file browser or dragging it into your Internet browser). You will be writing
 JavaScript code that uses new syntax (you will learn more about this later),
 so you will need to use the most up-to-date version of Chrome to ensure your code runs correctly. If your
 version of Chrome is too old, correctly-written code may still not run as expected.
